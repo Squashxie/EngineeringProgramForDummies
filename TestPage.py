@@ -1,6 +1,6 @@
 import openai
 
-#openai.api_key = 'your open ai key'
+openai.api_key = 'your open ai key'
 def generate_story(prompt):
     response = openai.completions.create(
         model="gpt-3.5-turbo-instruct",
