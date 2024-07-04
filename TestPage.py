@@ -1,7 +1,6 @@
 import openai
 
 openai.api_key = 'your open ai key'
-
 def generate_story(prompt):
     response = openai.completions.create(
         model="gpt-3.5-turbo-instruct",
@@ -12,8 +11,8 @@ def generate_story(prompt):
 def get_user_input():
     genre = input("What kind of story do you want to create? (e.g., adventure, fantasy): ")
     topic = input("What topic are you interested in? (e.g., space exploration, enchanted forests): ")
-    return f"Write a {genre} story about {topic}."
-
+    length = input("Do you want a short story or a long story? (e.g. long, short):")
+    return f"Write a {genre} story about {topic}. Write a {length} story."
 story_prompt = get_user_input()
 story = generate_story(story_prompt)
 print(story)
